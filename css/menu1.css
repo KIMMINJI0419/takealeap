@@ -1,0 +1,122 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Noto+Sans:wght@400;700&display=swap');
+
+/*
+    버튼의 위치를 고정하고 요소 위에 마우스를 올리면 클릭하는 형태의 마우스 커서가 되도록 한다.
+*/
+.nav-togglebtn {
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 5;
+}
+/*
+    span의 너비와 높이를 설정하고 중앙정렬을 하도록 한다.
+    메뉴 바의 트랜지션 진행시간은 0.3초로 설정한다.
+*/
+.btnnav {
+    position: absolute;
+    width: 70%;
+    height: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition-duration: 0.3s;
+    background-color: #fff;
+}
+/*
+    첫번째 span의 top을 30%, 마지막 span을 70%로 하면 햄버거모양의 바가 완성된다.
+*/
+.btnnav:nth-child(1){top: 30%;}
+.btnnav:last-child{top: 70%;}
+/*
+    자바스크립트를 통해 메뉴바 버튼을 클릭했을 때! 
+    navigation이라는 class를 가진 div에 class 명을 추가 하도록 한다.
+    햄버거 바의 모양이 변화하도록 한다.
+*/
+/* 
+    첫번째 span은 45도로 회전을 하고 중앙을 유지하도록 한다. 
+*/
+.active .btnnav:nth-child(1){
+    background-color: #fff;
+    top:50%;
+    transform:translate(-50%,-50%) rotate(45deg);
+    transition-duration: 0.3s;
+}
+/* 
+    두번째 span은 클릭 되었을 때 사라지도록 하여 x표시가 보이도록 한다. 
+*/
+.active .btnnav:nth-child(2){
+    display:none;
+    transition-duration: 0.3s;
+}
+/*
+    세번째 span 역시 첫번째 span 처럼 중앙에 오도록 하고, 왼쪽으로 45도를 회전한다.
+*/
+.active .btnnav:nth-child(3){
+    background-color: #fff;
+    top:50%;
+    transform: translate(-50%,-50%) rotate(-45deg);
+    transition-duration: 0.3s;
+}
+/*
+    자바스크립트로 class 추가 전의 nav class css다.
+    메뉴 바를 누르기 전이기 때문에 width와 height를 0으로 설정한다.
+    메뉴를 align-item과 justify-content로 중앙정렬한다.
+    직사각형으로 내려오는 것이 아닌 한쪽이 둥글게 내려오도록 border-radius를 한쪽만 설정한다.
+    트랜지션은 너비와 높이, border-radius 전환 효과로 ease-in-out를 사용한다.
+*/
+.nav {
+    width:0%;
+    height:0vh;
+    top:0px;
+    right:0px;
+    background:rgba(17, 17, 17);
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    z-index:2;
+    position:fixed;
+    overflow:hidden;
+    border-radius:0% 0% 0% 100%;
+    transition: width 300ms ease-in-out 300ms,
+                height 300ms ease-in-out 300ms,
+                border-radius 300ms ease-in-out 100ms;
+}
+/*
+    자바스크립트로 class 추가 후의 nav class css다.
+    너비와 높이를 100%, 100vh로 주고 전과 동일하게 중앙정렬을 하도록 한다.
+    트랜지션 시간을 조절해 확 들어오는 메뉴처럼 설정한다.
+*/
+.active .nav{
+    width:100%;
+    height:100vh;
+    align-items:center;
+    justify-content:space-around;
+    border-radius:0%;
+    transition: width 500ms ease-in-out 30ms,
+                height 500ms ease-in-out 30ms,
+                border-radius 300ms ease-in-out 330ms;
+}
+/*
+    메뉴 리스트 스타일을 설정하지 않고 센터로 정렬한다.
+    a태그의 데코레이션을 없애고 hover시 색이 변하도록 한다.
+*/
+.nav .menu {padding: 0;}
+.nav .menu li {
+    list-style-type: none;
+    margin:20px;
+    font-size:45px;
+    text-align:center;
+}
+.nav .menu li a {
+    text-decoration:none;
+    color:rgb(255, 255, 255);
+    font-weight:400;
+}
+.nav .menu li a:hover {
+    color:#aa9c91;
+}

@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Noto+Sans:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Serif Text', serif;
+}
+/* 풀스크린 백그라운드 영상 */
+.screen {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 스크린에 나오는 비디오는 포인터 이벤트를 없애도록 한다. */
+.screen video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.content {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+.content h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 4em;
+    text-transform: uppercase;
+    color: #fff;
+    font-style: italic;
+    font-weight: 400;
+}
+.content p {
+    font-size:1em;
+    color: #fff;
+}
+.content ul {list-style-type: none;}
+.content ul li a {
+    text-decoration: none;
+    font-size: 2em;
+    font-style: italic;
+    color: #fff;
+    position: relative;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+
+
+/* 팝업 형태처럼 진행*/
+/*
+    중앙 정렬을 하고 
+    visibility: hidden;
+    opacity: 0;
+    을 주어 숨긴다.
+*/
+.trailer {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: #000;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+}
+/* 자바스크립트 토글 함수로 class가 추가 되면 나타나도록 한다.*/
+.trailer.active1 {
+    visibility: visible;
+    opacity: 1;
+}
+.trailer video {
+    overflow: hidden;
+    position: relative;
+    outline: none;
+    width: 100%;
+    height: 100;
+    object-fit: cover;
+}
+/* 열고 닫는 기능을 할 것이기 때문에 커서를 포인터로 지정한다.*/
+.close1 {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    cursor: pointer;
+    color: #fff;
+    
+}
+
+
+.mv {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: #000;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+}
+.mv.active2 {
+    visibility: visible;
+    opacity: 1;
+}
+.mv video {
+    overflow: hidden;
+    position: relative;
+    outline: none;
+    width: 100%;
+    height: 100;
+    object-fit: cover;
+}
+.close2 {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    cursor: pointer;
+    color: #fff;
+    
+}
+
+
+.dance {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+}
+.dance.active3 {
+    visibility: visible;
+    opacity: 1;
+}
+.dance video {
+    overflow: hidden;
+    position: relative;
+    outline: none;
+    width: 100%;
+    height: 100;
+    object-fit: cover;
+}
+.close3 {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    cursor: pointer;
+    color: #fff;
+    
+}

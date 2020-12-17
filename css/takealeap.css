@@ -1,0 +1,112 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Noto+Sans:wght@400;700&display=swap');
+/* 
+    기본적으로 body의 margin과 padding을 0으로 주도록 한다.
+    index에 쓰이는 폰트는 DM Serif Text으로 설정한다.
+*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Serif Text', serif;
+    font-size: 16px;
+    background-color: #f0f0f0;
+}
+/* 앨범 설명 */
+.content1 {
+    width: 100%;
+    text-align: center;
+}
+.content1 h1 {
+    font-size: 4.375rem;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0;
+    padding-top: 150px;
+    padding-bottom: 20px;
+    color: #121213;
+}
+.content1 span {
+    display: inline-block;
+    height: 2px;
+    width: 70px;
+    margin-bottom: 30px;
+    background-color: #121213;
+}
+.content1 p {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: #121213;
+    margin-bottom: 30px;
+}
+.content2 {
+    width: 100%;
+    text-align: center;
+}
+.content2 h2 {
+    padding-left: 12.5%;
+    font-size: 4rem;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0;
+    padding-top: 100px;
+    padding-bottom: 10px;
+    color: #121213;
+    text-align: left;
+}
+.content2 span.list-line {
+    display: inline-block;
+    width: 75%;
+    height: 2px;
+    margin-bottom: 20px;
+    background-color: #121213;
+}
+.content2 table {margin-left: auto; margin-right: auto;}
+.content2 table tr, td{border-top:0;}
+.photo {width: 100%;padding: 0;margin: 0;}
+.photo img{width: 100%;bottom: 0;display: block;z-index: 5;}
+
+/* 트랙리스트 */
+table {
+    width: 70%;
+    text-align: left;
+    vertical-align: middle;
+}
+.track {
+    font-size: 3rem;
+    font-style: italic;
+    font-family: 'DM Serif Text', serif;
+    padding-right: 30px;
+    height: 100px;
+    
+}
+/* 트랙 넘버 */
+.track span {
+    font-size: 2rem;
+    color: #ce0000;
+    padding-right: 10px;
+}
+/* 트랙 한글 */
+.track span.kr {
+    font-size: 3rem;
+    font-style: normal;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    color: #121213;
+}
+/* 작곡,작사,편곡진 */
+.song {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 16px;
+    font-weight: 700;
+    color: #121213;
+}
+/* 작곡,작사,편곡,랩 */
+.song span {
+    font-size: 1rem;
+    color: #ce0000;
+    padding-right: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    line-height: 20px;
+}

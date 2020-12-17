@@ -1,0 +1,59 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Noto+Sans:wght@400;700&display=swap');
+/* 
+    기본적으로 body의 margin과 padding을 0으로 주도록 한다.
+    index에 쓰이는 폰트는 DM Serif Text으로 설정한다.
+*/
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'DM Serif Text', serif;
+}
+
+/* 
+    class 중 container의 이미지의 포지션을 absolute를 주도록 한다.
+    너비와 높이는 각각 100%, 100vh로 브라우저 화면의 너비와 높이에 맞춰 이미지가 보이도록 한다.
+*/
+.container > img.mainimg {
+    position: absolute;
+    width: 110%;
+    height: 110vh;
+    z-index: 0;
+}
+/* 이미지에 자바스크립트로 클릭시 적용될 css */
+.changeimg {
+    filter: invert(100%);
+    transition: filter 300ms;
+}
+
+
+
+/* 
+    display를 flex로 설정해 justify-content과 align-items을 사용하도록 한다.
+    justify-content를 space-around로 설정하면 가운데를 중심으로 가로정렬이 된다.
+    align-items를 center로 설정할 경우 이 div 내부에 있는 요소의 수직정렬이 가운데로 진행된다.
+*/
+.title {
+    width:100vw;
+    height: 100vh; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+} 
+/* 
+    title에 속한 span의 z-index를 이미지 z-index보다 크게 입력하면 이미지 위로 올라오게 된다.
+*/
+.change { 
+    font-size: 80px; 
+    font-style: italic; 
+    font-weight: 400;
+    z-index: 1;
+    cursor: pointer;
+    color: #121213;
+}
+/* 타이틀에 자바스크립트로 클릭시 적용될 css */
+.changespan {color: #fff;}
+
+
+
